@@ -22,6 +22,7 @@ class Book(models.Model):
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     copy_count = models.SmallIntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    image = models.ImageField(upload_to='book_image/%Y/%m/%d', blank=True)
 
 
 class Friend(models.Model):
